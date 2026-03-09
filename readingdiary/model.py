@@ -23,5 +23,22 @@ class Book:
         self.rating: int = Book.UNRATED
         self.notes: list[Note] = []
 
+    def add_note(self, text: str, page: int, date: datetime) -> bool:
+        if page > self.pages:
+            return False
+
+        note = Note(text, page, date)
+        self.notes.append(note)
+        return True
+
+    def set_rating(self, rating: int) -> bool:
+        if rating not in (Book.EXCELLENT,Book.GOOD,Book.BAD):
+            return False
+        self.rating = rating
+        return True
+
+
+
+
 
 
