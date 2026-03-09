@@ -37,6 +37,15 @@ class Book:
         self.rating = rating
         return True
 
+    def get_notes_of_page(self, page: int) -> list[Note]:
+
+        result: list[Note] = []
+        for note in self.notes:
+            if note.page == page:
+                result.append(note)
+
+        return result
+
 
 
 
